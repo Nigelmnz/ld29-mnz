@@ -3,7 +3,9 @@ var player = {
 	velocity: 1200,
 	jumpSpeed: 600,
 	drag: 5000,
-	maxSpeed: 300
+	maxSpeed: 300,
+	playerSize: 3,
+	faceScale : 1
 };
 
 player.createSprite = function(image){
@@ -28,18 +30,18 @@ player.enablePhysics = function(){
 
 	//Set Speed limits
 	player.sprite.body.maxVelocity.setTo(player.maxSpeed, player.maxSpeed*10);
-
 }
 
 player.update = function(){
+
 	//Move the player as needed
 	if (game.input.keyboard.isDown(Phaser.Keyboard.A)) {
 		player.sprite.body.velocity.x = -player.velocity;
-		player.sprite.scale.x = -1;
+		player.faceScale = -1;
 		player.sprite.animations.play('walk', 10, true);
 	} else if (game.input.keyboard.isDown(Phaser.Keyboard.D)) {
 		player.sprite.body.velocity.x = player.velocity;
-		player.sprite.scale.x = 1;
+		player.faceScale = 1;
 		player.sprite.animations.play('walk', 10, true);
 	} else {
 		player.sprite.body.velocity.x = 0;
@@ -59,5 +61,7 @@ player.update = function(){
         player.sprite.body.velocity.y = -1*player.jumpSpeed;
         sfx.jump.play();
     }
+
+    player.sprite.scale.setTo(player.playerSize/3 * player.faceScale ,player.playerSize/3);
 
 }

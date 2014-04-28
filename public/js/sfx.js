@@ -10,6 +10,6 @@ sfx.preload = function(){
 sfx.setupSound = function(){
 	sfx.talk = game.add.audio('talk_sfx',.05,false);
 	sfx.jump = game.add.audio('jump_sfx',.05,false);
-	sfx.pressHi = game.add.audio('press_hi_sfx',.02,false);
-	sfx.pressLo = game.add.audio('press_lo_sfx',.02,false);
+	sfx.pressHi = game.add.audio('press_hi_sfx',.03,false);
+	sfx.pressLo = game.add.audio('press_lo_sfx',.03,false);
 }

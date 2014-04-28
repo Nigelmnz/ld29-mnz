@@ -1,6 +1,5 @@
 body{
-	background-color: #CCCCCC;
-	margin:0px;
+	background-color: #1A1A1A;
 }
 
 h1{
@@ -10,4 +9,13 @@ h1{
 
 canvas{
 	margin: auto;
+}
+
+footer{
+	text-align: center;
+	font-family: "Lato";
+	color: white;
+	font-size: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
